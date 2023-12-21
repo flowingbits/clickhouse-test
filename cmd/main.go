@@ -16,7 +16,7 @@ func main() {
 	chDatabase := flag.String("ch-database", "default", "ClickHouse database to connect to")
 	chUsername := flag.String("ch-username", "default", "ClickHouse username to use")
 	chPassword := flag.String("ch-password", "", "ClickHouse password")
-	iteractiveMode := flag.Bool("interactive-mode", false, "")
+	interactiveMode := flag.Bool("interactive-mode", false, "")
 
 	flag.Parse()
 
@@ -39,7 +39,7 @@ func main() {
 
 	defer rows.Close()
 
-	if *iteractiveMode {
+	if *interactiveMode {
 		for {
 			fmt.Println("\nHow many rows would you like to read? Please enter a number:")
 			var numRows int
